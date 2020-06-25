@@ -54,18 +54,8 @@
 
 ## Lectures
 
-<table> 
-    <tr> 
-        <th>Name</th> 
-        <th>Favorite Color</th> 
-    </tr> 
-    <tr> 
-        <td>Bob</td> 
-        <td>Yellow</td> 
-    </tr> 
-    <tr> 
-        <td>Michelle</td> 
-        <td>Purple</td> 
-    </tr> 
-</table>
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
