@@ -27,7 +27,7 @@
 
 <!-- Subtitle -->
 <h3 align="center">
-  Summer Semester 2020
+  Summer Semester 2020, Karlsruhe Institute of Technology
 </h3>
 
 <!-- Badges -->
@@ -51,8 +51,8 @@
 The LaTeX source is released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) in the [ESM GitHub repository](https://github.com/nworbmot/esm-lectures). Here you can also track updates to the slides. The graphics are available in a [compressed archive file](https://nworbmot.org/courses/esm-2020/lectures/graphics.tar.gz).
 
 | Slides | Video | Topic
-| ---------------- | ------------- | ------------- | 
-| [Lecture 1](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-1.pdf)  | [Lecture 1]() | Introduction to energy system modelling |
+| :-------------: | :-------------: |  :------------- | 
+| [Lecture  1](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-1.pdf)  | [Lecture 1]() | Introduction to energy system modelling |
 | [Lecture 2](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-2.pdf)   | [Lecture 2]() | Consumption, Generation and Time series analysis for Germany | 
 [Lecture 3](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-3.pdf)   | [Lecture 3]() | Renewables in Germany versus Europe, Balancing Energy/Capacity, Graph Theory, Linear Power Flow |
 | [Lecture 4](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-4.pdf)   | [Lecture 4]() | Power flow theory and solutions |
@@ -62,7 +62,7 @@ The LaTeX source is released under a [Creative Commons Attribution 4.0 Internati
 | [Lecture 8](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-8.pdf)   | [Lecture 8]() | Optimisation and markets with networks and storage |
 | [Lecture 9](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-9.pdf)   | [Lecture 9]() | Investment in dispatchable generation, screening curves, investment in transmission |
 | [Lecture 10](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-10.pdf)  | [Lecture 10]() | Cost recovery from market, renewables in electricity markets, high shares of wind and solar, network versus storage optimisation |
-| [Lecture 11](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-11.pdf)  | [Lecture 11]() | Discounting, net present value ([NPV Jupyter notebook](https://nworbmot.org/courses/esm-2020/lectures/notebooks/NPV_examples.ipynb) and as [webpage](https://nworbmot.org/courses/esm-2020/lectures/notebooks/NPV_examples.html)), LCOE, multi-horizon investment, learning curves, path dependency ([multi-horizon Jupyter notebook](https://nworbmot.org/courses/esm-2020/lectures/notebooks/dynamic_investment.ipynb) and as [webpage](Discounting, net present value (NPV Jupyter notebook and as webpage), LCOE, multi-horizon investment, learning curves, path dependency (multi-horizon Jupyter notebook and as webpage))) |
+| [Lecture 11](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-11.pdf)  | [Lecture 11]() | Discounting, net present value ([NPV Jupyter notebook](https://nworbmot.org/courses/esm-2020/lectures/notebooks/NPV_examples.ipynb) and as [webpage](https://nworbmot.org/courses/esm-2020/lectures/notebooks/NPV_examples.html)), LCOE, multi-horizon investment, learning curves, path dependency ([multi-horizon Jupyter notebook](https://nworbmot.org/courses/esm-2020/lectures/notebooks/dynamic_investment.ipynb) and as [webpage](https://nworbmot.org/courses/esm-2020/lectures/notebooks/dynamic_investment.html) |
 | [Lecture 12](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-12.pdf)  | [Lecture 12]() | Sector coupling, heat in buildings, transport, industry, synthetic fuels, open energy modelling |
 | [Lecture 13](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-13.pdf)  | [Lecture 13]() | Workflow management with Snakemake, spatial resolution in optimization models, optimal power flow formulations using graph cycles |
 | [Lecture 14](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-14.pdf)  | [Lecture 14]() | Principal Component Analysis (PCA) applied to the power system |
@@ -74,11 +74,10 @@ The LaTeX source is released under a [Creative Commons Attribution 4.0 Internati
 
 The tutorial question sheets, data, code examples and other instructions can be downloaded here: [esm tutorials](https://github.com/lisazeyen/ESM_tutorial).
 
+Please work through the exercise sheets before the tutorial sessions.
+
 ## Previous Energy System Modelling Lecture Courses (with all slides and other material)
 
 [ESM 2019](https://nworbmot.org/courses/esm-2019/)
 
 [ESM 2018](https://nworbmot.org/courses/esm-2018/)
-
-Please work through the exercise sheets before the tutorial sessions.
-
