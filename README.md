@@ -51,3 +51,21 @@
 * Read the report in [PDF]() or [HTML]() format.
 * Read the code in the [Jupyter notebooks](https://nbviewer.jupyter.org/github/pitmonticone/TemplateRepository).
 * Run the code in the [Kaggle notebook](https://www.kaggle.com/pietromonticone/template).
+
+## Lectures
+
+<table> 
+    <tr> 
+        <th>Name</th> 
+        <th>Favorite Color</th> 
+    </tr> 
+    <tr> 
+        <td>Bob</td> 
+        <td>Yellow</td> 
+    </tr> 
+    <tr> 
+        <td>Michelle</td> 
+        <td>Purple</td> 
+    </tr> 
+</table>
+
