@@ -46,13 +46,9 @@
   
 </p>
 
-## How to Explore this Work
-
-* Read the report in [PDF]() or [HTML]() format.
-* Read the code in the [Jupyter notebooks](https://nbviewer.jupyter.org/github/pitmonticone/TemplateRepository).
-* Run the code in the [Kaggle notebook](https://www.kaggle.com/pietromonticone/template).
-
 ## Lectures
+
+The LaTeX source is released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) in the [ESM GitHub repository](https://github.com/nworbmot/esm-lectures). Here you can also track updates to the slides. The graphics are available in a [compressed archive file](https://nworbmot.org/courses/esm-2020/lectures/graphics.tar.gz).
 
 | First Header  | Second Header |
 | ------------- | ------------- |
