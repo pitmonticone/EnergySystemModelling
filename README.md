@@ -22,12 +22,12 @@
 
 <!-- Title -->
 <h1 align="center">
-  Title
+  Energy System Modelling 
 </h1>
 
-<!-- Title -->
+<!-- Subtitle -->
 <h3 align="center">
-  Subtitle
+  Summer Semester 2020
 </h3>
 
 <!-- Badges -->
