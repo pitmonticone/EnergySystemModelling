@@ -48,8 +48,6 @@
 
 ## Lectures
 
-The LaTeX source is released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) in the [ESM GitHub repository](https://github.com/nworbmot/esm-lectures). Here you can also track updates to the slides. The graphics are available in a [compressed archive file](https://nworbmot.org/courses/esm-2020/lectures/graphics.tar.gz).
-
 | Slides | Video | Topic
 | :-------------: | :-------------: |  :------------- | 
 | [Lecture  1](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-1.pdf)  | [Lecture 1]() | Introduction to energy system modelling |
@@ -69,6 +67,8 @@ The LaTeX source is released under a [Creative Commons Attribution 4.0 Internati
 | [Lecture 15](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-15.pdf)  | [Lecture 15]() | Flow allocation of network flows to generators and consumers |
 | [Lecture 16](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-16.pdf)  | [Lecture 16]() | Problems with optimization models, robustness to weather and climate change, near-optimal energy systems |
 
+* The LaTeX source is released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) in the [ESM GitHub repository](https://github.com/nworbmot/esm-lectures).  
+* The graphics are available in a [compressed archive file](https://nworbmot.org/courses/esm-2020/lectures/graphics.tar.gz).
 
 ## Tutorials 
 
