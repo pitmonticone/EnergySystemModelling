@@ -15,15 +15,11 @@
 </p>
 
 <!-- Title -->
-<h1 align="center">
+<h2 align="center">
   Tutorials
-</h1>
+</h2>
 
-<!-- Subtitle -->
-<h3 align="center">
-  Worksheets & Material
-</h3>
-
+### Worksheets & Material
 
 The tutorials include both, coding exercises and calculations done by hand.
 
