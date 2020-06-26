@@ -75,8 +75,3 @@
 ## Tutorials 
 
 The tutorial question sheets, data, code examples and other instructions can be downloaded [here](https://nbviewer.jupyter.org/github/pitmonticone/EnergySystemModelling).
-
-## Previous Energy System Modelling Lecture Courses (with all slides and other material)
-
-* [ESM 2019](https://nworbmot.org/courses/esm-2019/)
-* [ESM 2018](https://nworbmot.org/courses/esm-2018/)
