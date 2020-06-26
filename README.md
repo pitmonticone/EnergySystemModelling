@@ -2,20 +2,20 @@
 </p>
 
 <p align="center">
-    <img alt="Size" src="https://img.shields.io/github/repo-size/pitmonticone/TemplateRepository">
+    <img alt="Size" src="https://img.shields.io/github/repo-size/pitmonticone/EnergySystemModelling">
   </a>
-  <img alt="Forks" src="https://img.shields.io/github/forks/pitmonticone/TemplateRepository">
+  <img alt="Forks" src="https://img.shields.io/github/forks/pitmonticone/EnergySystemModelling">
   </a>
-  <img alt="Stars" src="https://img.shields.io/github/stars/pitmonticone/TemplateRepository">
+  <img alt="Stars" src="https://img.shields.io/github/stars/pitmonticone/EnergySystemModelling">
   </a>
-  <img alt="Languages" src="https://img.shields.io/github/languages/count/pitmonticone/TemplateRepository">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/pitmonticone/EnergySystemModelling">
   </a>
-  <a href="https://github.com/pitmonticone/TemplateRepository/graphs/contributors">
-    <img alt="Contributors" src="https://img.shields.io/github/contributors/pitmonticone/TemplateRepository">
+  <a href="https://github.com/pitmonticone/EnergySystemModelling/graphs/contributors">
+    <img alt="Contributors" src="https://img.shields.io/github/contributors/pitmonticone/EnergySystemModelling">
   </a>
-  <img alt="MIT Licence" src="https://img.shields.io/github/license/pitmonticone/TemplateRepository">
+  <img alt="MIT Licence" src="https://img.shields.io/github/license/pitmonticone/EnergySystemModelling">
   </a>
-  <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fpitmonticone%2FTemplateRepository"
+  <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fpitmonticone%2FEnergySystemModelling"
   </a>
   
 </p>
@@ -34,13 +34,13 @@
 </p>
 
 <p align="center">
-  <a href="https://www.kaggle.com/pietromonticone/template">
+  <a href="https://www.kaggle.com">
     <img alt="Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg">
   </a>
-  <a href="https://nbviewer.jupyter.org/github/pitmonticone/TemplateRepository">
+  <a href="https://nbviewer.jupyter.org/github/pitmonticone/EnergySystemModelling">
     <img alt="nbviewer" src="https://github.com/jupyter/design/blob/master/logos/Badges/nbviewer_badge.svg">
   </a>
-  <a href="https://colab.research.google.com/github/pitmonticone/TemplateRepository/blob/master">
+  <a href="https://colab.research.google.com/github/pitmonticone/EnergySystemModelling/blob/master">
     <img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg">
   </a>
   
@@ -74,7 +74,7 @@
 
 ## Tutorials 
 
-The tutorial question sheets, data, code examples and other instructions can be downloaded [here](https://github.com/lisazeyen/ESM_tutorial).
+The tutorial question sheets, data, code examples and other instructions can be downloaded [here](https://nbviewer.jupyter.org/github/pitmonticone/EnergySystemModelling).
 
 ## Previous Energy System Modelling Lecture Courses (with all slides and other material)
 
