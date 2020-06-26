@@ -46,6 +46,8 @@
   
 </p>
 
+## Resources 
+
 * The **LaTeX source** is released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) in the [ESM GitHub repository](https://github.com/nworbmot/esm-lectures).  
 * The **graphics** are available in a [compressed archive file](https://nworbmot.org/courses/esm-2020/lectures/graphics.tar.gz).
 * The **YouTube playlist** of video lectures is available [here](https://www.youtube.com/playlist?list=PL0hc3uclokfB-3_iijXyrdhc8R88jQCkd).
