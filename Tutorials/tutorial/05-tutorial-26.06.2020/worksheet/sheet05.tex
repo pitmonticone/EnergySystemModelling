@@ -1,0 +1,198 @@
+\documentclass[11pt,a4paper,fleqn]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, filecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{
+     colorlinks   = true,
+     citecolor    = gray
+}
+\usepackage{wrapfig}
+
+\usepackage{caption}
+\captionsetup{format=plain, indent=5pt, font=footnotesize, labelfont=bf}
+
+\setkomafont{disposition}{\scshape\bfseries}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{mathtools}
+\usepackage{fontawesome}
+% \usepackage{epsfig}
+% \usepackage{grffile}
+%\usepackage{times}
+%\usepackage{babel}
+\usepackage{tikz}
+\usepackage{paralist}
+\usepackage{color}
+\usepackage[top=3cm, bottom=2.5cm, left=2.5cm, right=3cm]{geometry}
+%\setlength{\mathindent}{1ex}
+
+% PGF
+\usepackage{pgfplots}
+\usepackage{pgf}
+\usepackage{siunitx}
+\usepackage{xfrac}
+\usepackage{calculator}
+\usepackage{calculus}
+\usepackage{eurosym}
+\usepackage{booktabs}
+%\sisetup{per-mode=fraction,%
+%	fraction-function=\sfrac}
+
+%\newcommand{\eur}[1]{\EUR{#1}\si{\per\kilo\meter}}
+\pgfplotsset{
+  compat=newest,
+  every axis/.append style={small, minor tick num=3}
+}
+
+%\usepackage[backend=biber,style=alphabetic,url=false,doi=false]{biblatex}
+%\addbibresource{sheet01_biber.bib}
+% \addbibresource{/home/coroa/papers/refs.bib}
+
+\newcommand{\id}{\mathbbm{1}}
+\newcommand{\NN}{{\mathbbm{N}}}
+\newcommand{\ZZ}{{\mathbbm{Z}}}
+\newcommand{\RR}{{\mathbbm{R}}}
+\newcommand{\CC}{{\mathbbm{C}}}
+\renewcommand{\vec}[1]{{\boldsymbol{#1}}}
+
+\renewcommand{\i}{\mathrm{i}}
+
+\newcommand{\expect}[1]{\langle\,#1\,\rangle}
+\newcommand{\e}[1]{\ensuremath{\,\mathrm{#1}}}
+
+\renewcommand{\O}{\mc{O}}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\ud}[1]{\textup{d}#1\,}
+
+\newcommand{\unclear}[1]{\color{green}#1}
+\newcommand{\problem}[1]{\color{red}#1}
+\newcommand{\rd}[1]{\num[round-mode=places,round-precision=1]{#1}}
+
+%\DeclareSIUnit{\euro}{\EUR}
+\DeclareSIUnit{\dollar}{\$}
+\newcommand{\eur}{\text{\EUR{}}}
+
+\usepackage{palatino}
+\usepackage{mathpazo}
+\setlength\parindent{0pt}
+\usepackage{xcolor}
+\usepackage{framed}
+\definecolor{shadecolor}{rgb}{.9,.9,.9}
+
+%=====================================================================
+%=====================================================================
+\begin{document}
+
+\begin{flushright}
+ \textbf{Energy System Modelling }\\
+ {\small Karlsruhe Institute of Technology}\\
+ {\small Institute for Automation and Applied Informatics}\\
+ {\small Summer Term 2020}\\
+\end{flushright}
+
+ 
+ \vspace{-0.5em}
+ \hrulefill
+ \vspace{0.3em}
+
+\begin{center}
+ \textbf{\textsc{\Large Tutorial V: Investment and Large Power Systems}}\\
+ \small Will be worked on in the exercise session on Friday, 26 June 2020.\\[1.5em]
+\end{center}
+
+\vspace{-0.5em}
+\hrulefill
+\vspace{0.8em}
+
+\vspace{1em}
+
+%=============== ======================================================
+\paragraph{Problem V.1 (analytical) -- investment in generators and transmission lines \faGroup}~\\
+%=====================================================================
+
+Two generators are connected to the grid by a single transmission
+line (with no electrical demand on their side of the transmission line). A single company owns both the generators and the transmission line. Generator 1 has a linear cost curve $C_1(g_1) = 5 g_1$ [\euro/h] and a capacity of 300~MW and Generator 2 has a linear cost curve $C_2(g_2) = 10 g_2$ [\euro/h] and a capacity of 900~MW. The transmission line has a capacity $K$ of 1000~MW. Suppose the demand in the grid is always high enough to absorb the
+generation from the two generators and that the market price of
+electricity $\pi$ is never below 15 \euro/MWh and averages 20
+\euro/MWh.
+
+\begin{enumerate}[(a)]
+ \item Determine the full set of equations (objective function and
+       constraints) for the generators to optimise their dispatch to
+       maximise total economic welfare.
+ \item What is the optimal dispatch?
+ \item What are the values of the KKT multipliers for all the constraints in terms of $\pi$?
+ \item A new turbo-boosting technology can increase the capacity of Generator 1 from 300~MW to 350~MW.  At what annualised capital cost would it be efficient to invest in this new technology?
+ \item A new high temperature conductor technology can increase the capacity of the transmission line by 200~MW. At what annualised capital cost would it be efficient to invest in this new technology?
+\end{enumerate}
+
+\newpage
+%=============== ======================================================
+\paragraph{Problem V.2 (anal./prog.) -- duration curves and generation investment \faGroup}~\\
+%=====================================================================
+
+Let us suppose that demand is inelastic. The demand-duration curve is given by $D=1000-1000z$, where $z\in [0,1]$ represents the probability of time the load spends above a certain value. Suppose that there is a choice between coal and gas generation plants with a variable cost of 2 and 12~\euro/MWh, together with load-shedding at 1012\euro/MWh. The fixed costs of coal and gas generation are 15 and 10~\euro/MWh, respectively.
+
+\begin{enumerate}[(a)]
+ \item Describe the concept of a screening curve and how it helps to determine generation investment, given a demand-duration curve.
+ \item Plot the screening curve and find the intersections of the generation technologies.
+ \item Compute the long-term equilibrium power plant investment (optimal mix of generation) using PyPSA.
+ \item Plot the resulting price duration curve and the generation dispatch. Comment!
+ \item Demonstrate that the zero-profit condition is fulfilled.
+ \item While it can be shown that generators recover their cost in theory, name reasons why this might not be the case in reality.
+\end{enumerate}
+
+\newpage
+
+%=============== ======================================================
+\paragraph{Problem V.3 (programming) -- synthetic fuels \faHome}~\\
+Diesel can be produced via Fischer-Tropsch process from hydrogen and carbon dioxide. The necessary CO$_2$ can be captured from the atmosphere with direct air capture (DAC) and than be stored. Model the production of diesel via Fischer-Tropsch-process in PyPSA. You can find a notebook filled out partially in your tutorial repository and on Github.
+\begin{enumerate}[(a)]
+	\item  read the demand data (given in MWh) for electricity and transport. Plot the time series. How do you explain the shape of the transport demand?
+	\item What is the meaning of \texttt{e\_cyclic}, \texttt{e\_inital} and \texttt{e\_min\_pu} for the component \texttt{store} in the PyPSA syntax?
+	\item Complete the jupyter notebook to build a PyPSA model including the transport and electricity demand. Set as snapshots the given demand time period. Add a bus and a store for hydrogen, gas and CO$_2$. Electricity can be generated withan Open-Cycle-gas turbine (OCGT) and for transport diesel cars are used. Assume that the amount of emitted CO$_2$ to the atmosphere is equal to the amount of used gas in the OCGT/ used diesel in the car. The whole required diesel should be also produced via Fischer-Tropsch during the investigated period. Why do we need to track the CO$_2$ emissions for this problem?
+	\item Run an investment optimisation of the problem
+		\begin{enumerate}[(i)]
+		\item Show that the total amount of carbon stays constant in every time step
+		\item Plot the energy difference in the stores
+		\item What are the total system costs?
+		\end{enumerate}
+	\item The allowed amount of CO$_2$ in the atmosphere should be zero in the last time step. Add this as an extra constraint to the model and run again the investment optimisation. How do the total system costs change? How much CO2 storage capacity is needed?
+	\item Add electric cars to the model and run again an investment optimisation. How large is the share of electric cars to satisfy the transport demand?
+	\item Add a wind generator with the given time series in the data folder. Optimise the investment. How large is the share of electric cars now? How do you explain the result?
+\end{enumerate} 
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[]
+	\begin{tabular}{llllll}
+		\hline
+		\rowcolor[HTML]{C0C0C0} 
+		\textbf{technology} & \textbf{\begin{tabular}[c]{@{}l@{}}capital cost\\ {[}EUR/MW{]}\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}marginal cost\\ {[}EUR/MWh{]}\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}efficiency\\ {[}per unit{]}\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}energy \\ in the storage at the beginning\\ {[}TWh{]}\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}optimise\\ capacity\end{tabular}} \\ \hline
+		onwind              & 1500                                                                         & 0                                                                              & -                                                                            & -                                                                                                      & yes                                                                  \\ \hline
+		\rowcolor[HTML]{EFEFEF} 
+		Fischer-Tropsch     & 145                                                                          & -                                                                              & 1                                                                            & -                                                                                                      & yes                                                                  \\ \hline
+		gas storage         & -                                                                            & 23                                                                             & -                                                                            & 6                                                                                                      & no                                                                   \\ \hline
+		\rowcolor[HTML]{EFEFEF} 
+		H2 storage          & -                                                                            & 213                                                                            & -                                                                            & 1                                                                                                      & no                                                                   \\ \hline
+		CO2 storage         & 20                                                                           & -                                                                              & -                                                                            & -                                                                                                      & yes                                                                  \\ \hline
+		\rowcolor[HTML]{EFEFEF} 
+		electric car        & -                                                                            & -                                                                              & 0.9                                                                          & -                                                                                                      & yes                                                                  \\ \hline
+		DAC                 & -                                                                            & 100                                                                            & 1                                                                            & -                                                                                                      & yes                                                                  \\ \hline
+		\rowcolor[HTML]{EFEFEF} 
+		diesel car          & -                                                                            & -                                                                              & 0.35                                                                         & -                                                                                                      & yes                                                                  \\ \hline
+		OCGT                & 2000                                                                         & 2                                                                              & 0.5                                                                          & -                                                                                                      & yes                                                                  \\ \hline
+	\end{tabular}
+\end{table}
+%=====================================================================
+%=============== ======================================================
+%\paragraph{Problem V.4 \normalsize (network clustering).}~\\
+%=====================================================================
+
+\end{document}

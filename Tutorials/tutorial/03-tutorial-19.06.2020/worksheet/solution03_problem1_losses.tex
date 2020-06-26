@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amsthm}
+\usepackage{xcolor}
+\usepackage[gen]{eurosym}
+
+\begin{document}
+\section*{Problem 1 - including losses!}
+
+\subsubsection*{a) Welche Kapazitäten ben\"otigen solar und wind?}
+\begin{align*}
+	\langle \Delta (t) \rangle = \langle L(t) - G \cdot g(t) \rangle \overset{!}{=} 0
+\end{align*}
+Norden:
+\begin{align*}
+	\langle L^N - G^N_w\cdot g_w^N(t)\rangle &=\frac{1}{T} \int_0^T L^N - G_w^N \cdot g_w^N(t) \ \mathrm{d}t \\
+	&=L^N - \frac{1}{T} \int_0^T G_w^N\cdot c_w \left(1+A_w\sin{\left(\omega_wt\right)}\right)\\
+	&\overset{(T=364d)}{=} L^N - G_w^N \cdot c_w \overset{!}{=} 0
+\end{align*}
+Also, $G_w^N = \frac{L^N}{c_w} = \frac{A_l^N}{c_w} = 66.7$ GW.\\
+\ \\
+Analog im S\"uden: $G_s^S = \frac{L^S}{c_s} = 250$ GW.
+
+\subsubsection*{b) Den Mismatch zwischen Generationsflotte und Speicher auslgeichen...}
+\begin{align*}
+	G_{st,store} &= - \mathrm{min}_t \left( L(t)-G\cdot g(t) \right) \eta_{store} \qquad \left(G\cdot g(t) > L \rightarrow \mathrm{speichern!}\right)\\
+	G_{st,dispa} &= \mathrm{max}_t \left( L(t) - G\cdot g(t) \right) \eta_{dispa}^{-1} \quad (L > G\cdot g(t) \rightarrow \mathrm{einspeisen!})
+\end{align*}
+Es gibt jetzt 4 verschiedene Fälle:
+\begin{itemize}
+	\item $G_{st,store,h}^N$ \& $G_{st,dispa,h}^N$
+	\item $G_{st,store,b}^N$ \& $G_{st,dispa,b}^N$
+	\item $G_{st,store,h}^S$ \& $G_{st,dispa,h}^S$
+	\item $G_{st,store,b}^S$ \& $G_{st,dispa,b}^S$
+\end{itemize}
+Erstmal allgemein:
+\begin{align*}
+	G_{st,dispa}^N &= \mathrm{max}_t \left(L^N-G^N_w\cdot g_w^N(t)\right)\eta_{dispa}^{-1} \\
+	&= \mathrm{max}_t \left( A_l^N - \frac{A_l^N}{c_w}c_w\left(1+A_w\sin\left(\omega_wt\right)\right) \right) \eta_{dispa}^{-1} \\
+	&= \mathrm{max}_t \left(-A_l^N A_w\sin\left(\omega_wt\right)\right) \eta_{dispa}^{-1} \\
+	&= A_l^N A_w \eta_{dispa}^{-1}
+\end{align*}
+Wegen der Symmetrie von $g(t)$ sowohl im Norden als auch im S\"uden, gilt $-\mathrm{min}_t\left(L-G\cdot g(t)\right) = \mathrm{max}_t \left(L-G\cdot g(t)\right)$, und daher auch:
+\begin{align*}
+	G_{st,store}^N = A_l^NA_w\eta_{store}\,.
+\end{align*}
+Einsetzen ergibt:
+\begin{itemize}
+	\item $G_{st,store,h}^N = 13.5$GW \\ $G_{st,dispa,h}^N = 44.44$GW
+	\item $G_{st,store,b}^N = 16.2$GW \\ $G_{st,dispa,b}^N = 20$GW
+	\item $G_{st,store,h}^S=22.5$GW \\ $G_{st,dispa,h}^S = 74.07$GW
+	\item $G_{st,store,b}^S = 27GW$ \\ $G_{st,dispa,b}^S = 33.33$GW
+\end{itemize}
+
+\subsubsection*{c) Welche Speicherkapazit\"at wird benotigt?}
+
+\begin{align*}
+	E_{st}^N &= \mathrm{max}_t \left( \int_0^t G\cdot g(t) - L(t) \right) \eta_{store} \\
+	&= 2\frac{A_l^N A_w}{\omega_w} \eta_{store}
+\end{align*}
+Daraus ergeben sich:
+\begin{itemize}
+	\item $E_{st,b}^N = 866$ GWh
+	\item $E_{st,h}^N = 721$ GWh
+	\item $E_{st,b}^S = 206$ GWh
+	\item $E_{st,h}^S = 171$ GWh
+\end{itemize}
+\subsubsection*{d) Welchen Speicher benutzen wir?}
+\begin{itemize}
+	\item $P_h^N = 750\frac{E}{kW}$ $\cdot$ $\mathrm{max}\{G_{st,store,h}^N,\ G_{st,dispa,h}^N\}+10\cdot\frac{E}{kWh} E_{st,h}^N = 40.54\cdot10^9E$
+	\item $P_b^N = 300\frac{E}{kW}$ $\cdot$ $\mathrm{max}\{G_{st,store,b}^N,\ G_{st,dispa,b}^N\}+200\cdot\frac{E}{kWh} E_{st,b}^N = 179.2\cdot10^9E$
+	\item $P_h^S = 750\frac{E}{kW}$ $\cdot$ $\mathrm{max}\{G_{st,store,h}^S,\ G_{st,dispa,h}^S\}+10\cdot\frac{E}{kWh} E_{st,h}^S = 57.26\cdot10^9E$
+	\item $P_b^S = 300\frac{E}{kW}$ $\cdot$ $\mathrm{max}\{G_{st,store,b}^S,\ G_{st,dispa,b}^S\}+200\cdot\frac{E}{kWh} E_{st,b}^S = 51.199\cdot10^9E$
+\end{itemize}
+$\Rightarrow$ Im Norden hydrogen, im S\"uden battery.
+
+\subsubsection*{e) Mit \"Ubertragungsleitungen}
+Hier wieder ohne Verluste.
+Wegen $P^N_{w+h} < P_{s+h}^S$, wird Energie vom Norden in den Süden übertragen. Außerdem gilt $E^N+E^S=50GW$.
+
+\begin{align*}
+	P_{tot} &= \frac{E^N\cdot P^N_{w+h} + E^S\cdot P_{s+h}^S + (E^N-E^S)\cdot 200 \euro kM^{-1}}{E^N+E^S} \\
+	&\overset{(E^S=50GW-E^N)}{=} \frac{E^N\cdot P^N_{w+h}+(50GW-E^N)\cdot P^S_{s+h}+(2E^N-50GW)\cdot 200\euro kW^{-1}}{50GW} \\
+	&= \frac{E^N(P^N_{w+h}-P^S_{s+h}+400kW^{-1})+50GW(P^S_{s+h}-200\euro kW^{-1})}{50GW}
+\end{align*}
+Minimieren ergibt: Der Faktor hinter $E^N$ ist negativ $\rightarrow$ $E^N=50$GW und $E^S=0$GW.
+
+\begin{align*}
+	\mathrm{min}\ P_{tot} = 5.2\cdot 10^9 \euro GW^{-1}
+\end{align*}
+
+Ohne Transmission:
+
+\begin{align*}
+\mathrm{min}\ P_{tot} = 5.6\cdot 10^9 \euro GW^{-1}
+\end{align*}
+
+Es ist also kosteneffizienter, die Leitungen zu bauen!
+
+\end{document}

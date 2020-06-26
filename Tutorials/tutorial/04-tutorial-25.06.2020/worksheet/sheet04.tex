@@ -1,0 +1,226 @@
+\documentclass[11pt,a4paper,fleqn]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true, citecolor=blue, linkcolor=blue, filecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{
+	colorlinks   = true,
+	citecolor    = gray
+}
+\usepackage{wrapfig}
+
+\usepackage{caption}
+\captionsetup{format=plain, indent=5pt, font=footnotesize, labelfont=bf}
+
+\setkomafont{disposition}{\scshape\bfseries}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{mathtools}
+% \usepackage{epsfig}
+% \usepackage{grffile}
+%\usepackage{times}
+%\usepackage{babel}
+\usepackage{tikz}
+\usepackage{paralist}
+\usepackage{color}
+\usepackage[top=3cm, bottom=2.5cm, left=2.5cm, right=3cm]{geometry}
+%\setlength{\mathindent}{1ex}
+\usepackage{fontawesome}
+% PGF
+\usepackage{pgfplots}
+\usepackage{pgf}
+\usepackage{siunitx}
+\usepackage{xfrac}
+\usepackage{calculator}
+\usepackage{calculus}
+\usepackage{eurosym}
+\usepackage{booktabs}
+%\sisetup{per-mode=fraction,%
+%	fraction-function=\sfrac}
+
+%\newcommand{\eur}[1]{\EUR{#1}\si{\per\kilo\meter}}
+\pgfplotsset{
+	compat=newest,
+	every axis/.append style={small, minor tick num=3}
+}
+
+%\usepackage[backend=biber,style=alphabetic,url=false,doi=false]{biblatex}
+%\addbibresource{sheet01_biber.bib}
+% \addbibresource{/home/coroa/papers/refs.bib}
+
+\newcommand{\id}{\mathbbm{1}}
+\newcommand{\NN}{{\mathbbm{N}}}
+\newcommand{\ZZ}{{\mathbbm{Z}}}
+\newcommand{\RR}{{\mathbbm{R}}}
+\newcommand{\CC}{{\mathbbm{C}}}
+\renewcommand{\vec}[1]{{\boldsymbol{#1}}}
+
+\renewcommand{\i}{\mathrm{i}}
+
+\newcommand{\expect}[1]{\langle\,#1\,\rangle}
+\newcommand{\e}[1]{\ensuremath{\,\mathrm{#1}}}
+
+\renewcommand{\O}{\mc{O}}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\ud}[1]{\textup{d}#1\,}
+
+\newcommand{\unclear}[1]{\color{green}#1}
+\newcommand{\problem}[1]{\color{red}#1}
+\newcommand{\rd}[1]{\num[round-mode=places,round-precision=1]{#1}}
+
+%\DeclareSIUnit{\euro}{\EUR}
+\DeclareSIUnit{\dollar}{\$}
+\newcommand{\eur}{\text{\EUR{}}}
+
+\usepackage{palatino}
+\usepackage{mathpazo}
+\setlength\parindent{0pt}
+\usepackage{xcolor}
+\usepackage{framed}
+\definecolor{shadecolor}{rgb}{.9,.9,.9}
+
+\def\cap{\text{Cap}}
+\def\floor{\text{Floor}}
+\def\l{\lambda}
+\def\m{\mu}
+\def\d{\partial}
+\def\cL{\mathcal{L}}
+\def\co2{CO${}_2$}
+
+\def\mw{\text{ MW}}
+\def\mwh{\text{ MWh}}
+\def\gw{\text{ GW}}
+\def\gwh{\text{ GWh}}
+\def\emwh{\text{ \euro/MWh}}
+\def\bemwh{\text{ [\euro/MWh]}}
+
+%=====================================================================
+%=====================================================================
+\begin{document}
+
+\begin{flushright}
+ \textbf{Energy System Modelling }\\
+ {\small Karlsruhe Institute of Technology}\\
+ {\small Institute for Automation and Applied Informatics}\\
+ {\small Summer Term 2020}\\
+\end{flushright}
+
+ 
+ \vspace{-0.5em}
+ \hrulefill
+ \vspace{0.3em}
+
+\begin{center}
+ \textbf{\textsc{\Large Tutorial IV: Electricity Markets}}\\
+ \small Will be worked on in the exercise session on Thursday, 25 June 2020.\\[1.5em]
+\end{center}
+
+\vspace{-0.5em}
+\hrulefill
+\vspace{0.8em}
+
+%=============== ======================================================
+\paragraph{Problem IV.1 (analytical) -- shadow prices \faGroup}~\\
+%=====================================================================
+
+Suppose that the utility for the electricity consumption of an industrial company is given by
+\[
+ U(d) = 70d - 3d^2 ~[\textrm{\euro}/\si{\hour}] \quad , \quad d\in [d_{min},d_{max}]=[2,10],
+\]
+where $d$ is the demand in MW and $d_{min}, d_{max}$ are the minimum and maximum demand. \\
+[1em]
+Assume that the company is maximising its net surplus for a given electricity price $\pi$, i.e. it maximises $\max_{d} \left[U(d) -
+  \pi d\right]$.
+\begin{enumerate}[(a)]
+ \item  If the price is $\pi = 5$~\euro/MWh, what is the optimal
+       demand $d^*$?  What is the value of the KKT multiplier $\mu_{max}$
+       for the constraint $d \leq d_{max}=10$ at this optimal solution?
+       What is the value of $\mu_{min}$ for $d \geq d_{min} = 2$?
+ \item Suppose now the electricity price is $\pi = 60$~\euro/MWh. What are
+       the optimal demand $d^*$, $\mu_{max}$ and $\mu_{min}$ now?
+\end{enumerate}
+
+%=============== ======================================================
+\paragraph{Problem IV.2 (analytical) -- Economic dispatch in a single bidding zone \faGroup}~\\
+%=====================================================================
+
+Consider an electricity market with two generator types, one with the cost function $C_1(g_1)=c_1g_1$ with variable cost $c_1 = 20\emwh$, capacity $G_1 = 300\mw$ and a dispatch rate of $g_1$~[MW], and another with the cost function $C_2(g_2)=c_2g_2$ with variable cost $c_2=50\emwh$, capacity $G_2=400\mw$ and a dispatch rate of $g_2$~[MW]. The demand-side has utility function $U(d) = 8000d - 5d^2$~[\euro/h] for a consumption rate of $d$~[MW].
+\begin{enumerate}[(a)]
+ \item What are the objective function and constraints required for an optimisation problem to maximise short-run social welfare in this market?
+ \item Write down the Karush-Kuhn-Tucker (KKT) conditions for this problem.
+ \item Determine the optimal rate of production of the generators and the value of all KKT multipliers. What is the interpretation of the respective KKT multipliers?
+\end{enumerate}
+
+\newpage
+%=============== ======================================================
+\paragraph{Problem IV.3 (analytical) -- efficient dispatch in a two-bus power system \faHome}~\\
+%=====================================================================
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[width=14cm]{two-bus}
+
+ \caption{A simple two-bus power system.}
+ \label{twobus}
+\end{figure}
+
+Consider the two-bus power system shown in Figure \ref{twobus}, where the two nodes represent two markets, each with different total demand $D_i$, and one generator at each node producing $P_i$. At node A the demand is $D_A = 2000 \si{\mega\watt}$, whereas at node B the demand is $D_B = 1000 \si{\mega\watt}$. Furthermore, there is a transmission line with a capacity denoted by $F_{AB}$. The marginal cost of production of the generators connected to buses A and B are given respectively by the following expressions:
+
+\begin{align*}
+ MC_A & = 20 + 0.03 P_A \hspace{1cm}\eur/\si{\mega\watt\hour}  \\
+ MC_B & = 15 + 0.02 P_B \hspace{1cm} \eur/\si{\mega\watt\hour}
+\end{align*}
+
+Assume that the demands $D_A$ and $D_B$ are constant and insensitive to price, that energy is sold at its marginal cost of production and that there are no limits on the output of the generators.
+
+\begin{enumerate}[(a)]
+ \item Calculate the price of electricity at each bus, the production
+       of each generator, and the flow on the line for the following cases. You may also calculate the values of any KKT multiplier as a bonus.
+       \begin{enumerate}[(i)]
+        \item The line between buses A and B is disconnected.
+        \item The line between buses A and B is in service and has an unlimited capacity.
+        \item The line between buses A and B is in service and has an unlimited capacity, but the maximum output of Generator B is 1500~MW.
+        \item The   line between buses A and B is in service and has an unlimited capacity, but the maximum output of Generator A is 900~MW. The output of Generator B is unlimited.
+        \item The line between buses A and B is in service but its capacity is limited to 600~MW. The output of the generators is unlimited.
+       \end{enumerate}
+ \item Calculate the generator revenues, generator profits, consumer payments and consumer net surplus for all the cases considered in the above problem. Who benefits from the line connecting these two buses?
+ \item Calculate the congestion surplus for case (v). For what values of the flow on the line between buses A and B is the congestion surplus equal to zero?
+\end{enumerate}
+
+
+\newpage
+
+%=============== ======================================================
+\paragraph{Problem IV.4 (programming) -- generator dispatch with SciGRID \faHome}~\\
+%=====================================================================
+
+SciGRID\footnote{\url{https://www.power.scigrid.de/pages/general-information.html}} is a project that provides an open source reference model of the European transmission networks. In this tutorial, other than previous simple examples, you will examine the economic dispatch of many generators all over Germany and its effect on the power system. The data files for this example and a populated Jupyter notebook are provided on the course homepage\footnote{\url{https://nworbmot.org/courses/esm-2020/}} or in your tutorial package. The dataset comprises time series for loads and the availability of renewable generation at an hourly resolution for the year 2011. Feel free to choose a day to your liking: \texttt{2011-01-31} was the least windy day of 2011, \texttt{2011-02-05} was a stormy day with lots of wind energy production, \texttt{2011-07-12} was a very sunny day, and \texttt{2011-09-06} was a windy and sunny autumn day.
+
+\begin{enumerate}[(a)]
+	\item Describe the network as well as its regional and temporal characteristics.
+	\begin{enumerate}[(i)]
+		\item Plot the aggregated load curve.
+		\item Plot the total generation capacities grouped by generation technology. Why is the share of capacity for renewables higher than the share of electricity produced?
+		\item Plot the regional distribution of the loads for different snapshots. What are the major load centres?
+		\item Plot the regional distribution of generation technologies. Comment!
+	\end{enumerate}
+	\item Run a linear optimal power flow to obtain the economic dispatch and analyse the results.
+	\begin{enumerate}[(i)]
+		\item To approximate n-1 security and allow room for reactive power flows, set the maximum line loading of any line in the network to 70 \% of their thermal rating.
+		\item Plot the hourly dispatch grouped by carrier for the chosen day. Comment!
+		\item Plot the aggregate dispatch of the pumped hydro storage units and the state of charge throughout the day and describe how they are used throughout the day.
+		\item Show the line loadings for different snapshots on the network. Can you identify a regional concentration of highly loaded branches?
+		\item Plot the locational marginal prices for snapshots on the network. What is the interpretation of high and low marginal prices? What do the geographical differences of nodal prices tell you about the regional generation capacity, load centres and the state of the transmission network?
+		\item Plot the curtailment for on- and offshore wind as well as for solar energy on the chosen day. Why is variable renewable electricity curtailed?  Would there still be curtailment if there were unlimited transmission capacity? What happens to the nodal prices in this case?
+	\end{enumerate}
+	\item Perform a non-linear power flow (Newton-Raphson) on the injections determined by the linear optimal power flow.
+	\begin{enumerate}[(i)]
+		\item Plot the regional and temporal distribution of reactive power feed-in. What is the consequence of reactive flows in terms of the network's transfer capacity?
+		\item Analyse whether the chosen security constraint for thermal line loading  was sufficient. What happens if you omit the security constraint or require an even higher security constraint?
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
