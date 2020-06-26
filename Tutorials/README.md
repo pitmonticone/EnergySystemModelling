@@ -1,6 +1,5 @@
 <!-- Badges -->
 </p>
-
 <p align="center">
   <a href="https://www.kaggle.com/pietromonticone/template">
     <img alt="Kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg">
@@ -11,7 +10,6 @@
   <a href="https://colab.research.google.com/github/pitmonticone/TemplateRepository/blob/master">
     <img alt="Colab" src="https://colab.research.google.com/assets/colab-badge.svg">
   </a>
-  
 </p>
 
 <!-- Title -->
@@ -21,10 +19,9 @@
 
 ###   Worksheets & Material
 
-The tutorials include both, coding exercises and calculations done by hand.
+The tutorials include both coding exercises and calculations done by hand.
 
 There's a worksheet (`X-sheet.pdf`) for every tutorial in `X-tutorial-date/worksheet`.
 
 If the tutorial includes coding exercises (some tutorials have no coding exercises),
 there are `jupyter notebooks` (`tutorial-X-task-Y.ipynb`) and data sources provided in `X-tutorial-date/notebooks/data`.
-

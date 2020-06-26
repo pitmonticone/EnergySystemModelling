@@ -1,11 +1,7 @@
-
-## Resources 
-
 * The **LaTeX source** is released under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/) in the [ESM GitHub repository](https://github.com/nworbmot/esm-lectures).  
 * The **graphics** are available in a [compressed archive file](https://nworbmot.org/courses/esm-2020/lectures/graphics.tar.gz).
 * The **YouTube playlist** of video lectures is available [here](https://www.youtube.com/playlist?list=PL0hc3uclokfB-3_iijXyrdhc8R88jQCkd).
-* The tutorial question sheets, data, code examples and other instructions are available [here](https://nbviewer.jupyter.org/github/pitmonticone/EnergySystemModelling/Tutorials).
-
+* The **tutorials** are available [here](https://github.com/pitmonticone/EnergySystemModelling/tree/master/Tutorials).
 
 | Slides | Video | Topic
 | :-------------: | :-------------: |  :------------- | 
@@ -25,4 +21,3 @@
 | [Lecture 14](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-14.pdf)  | [Lecture 14](https://youtu.be/Hh2ed3wY_bk) | Principal Component Analysis (PCA) applied to the power system |
 | [Lecture 15](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-15.pdf)  | [Lecture 15](https://youtu.be/p_tFZwahLEw) | Flow allocation of network flows to generators and consumers |
 | [Lecture 16](https://nworbmot.org/courses/esm-2020/lectures/esm-lecture-16.pdf)  | [Lecture 16](https://youtu.be/Tt0qOhX0ZLI) | Problems with optimization models, robustness to weather and climate change, near-optimal energy systems |
-
